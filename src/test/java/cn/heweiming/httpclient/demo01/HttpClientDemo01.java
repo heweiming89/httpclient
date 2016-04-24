@@ -13,9 +13,9 @@ public class HttpClientDemo01 {
 	@Test
 	public void testGet() throws HttpException, IOException {
 		HttpClient client = new HttpClient();
-		String host = "http://ws.webxml.com.cn";
-		String getStr = "/WebServices/MobileCodeWS.asmx/getMobileCodeInfo?mobileCode=15800979640&userID=";
-		GetMethod get = new GetMethod(host + getStr);
+		String url = "http://ws.webxml.com.cn/WebServices/MobileCodeWS.asmx/getMobileCodeInfo";
+		String queryStr = "?mobileCode=15800979640&userID=";
+		GetMethod get = new GetMethod(url + queryStr);
 		int i = client.executeMethod(get);
 		System.out.println(i);
 		String string = get.getResponseBodyAsString();
@@ -34,7 +34,6 @@ public class HttpClientDemo01 {
 			String responseStr = post.getResponseBodyAsString();
 			System.out.println(responseStr);
 		}
-
 	}
 
 }

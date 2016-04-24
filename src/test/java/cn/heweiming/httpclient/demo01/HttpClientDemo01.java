@@ -36,4 +36,9 @@ public class HttpClientDemo01 {
 		}
 	}
 
+	@Test
+	public void testSoap() {
+		
+	}
+
 }
